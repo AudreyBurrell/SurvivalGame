@@ -5,7 +5,7 @@
         Note: might as well keep the tutorial on main.html
 */
 
-let population = 12;
+let population = 12; //LEFT OFF: MAKING A HELPER FUNCTION JUST TO INTIALIZE THE VARIABLES NOW AND AFTER TUTORIAL
 let homelessPopulation;
 let birthRate;
 let deathRate;
@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("screenOverlay").style.display = "block";
         document.getElementById("tutorialPopup").style.display = "block";
     }, 3000); 
+});
+
+document.getElementById('continueTutorialBtn').addEventListener("click", () => {
+    //to save space, execute code that is located in a different file
 });
 
 document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
