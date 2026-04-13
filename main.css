@@ -1,8 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url("assets/Background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 0;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* HEADER */
+#headerArea {
+    height: 60px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 16px;
+
+    background: rgba(205, 175, 140, 0.85); /* light tan */
+    backdrop-filter: blur(6px);
+
+    flex-shrink: 0;
+    z-index: 1000;
+}
+
+/* LEFT STATS AREA */
+#statsArea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* RIGHT BUTTON AREA */
+#headerControls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BUTTONS */
+#headerControls button {
+    background: white;
+    border: 2px solid black;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    font-size: 14px;
+    border-radius: 6px;
+
+    transition: all 0.15s ease;
+}
+
+#headerControls button:hover {
+    background: #f2f2f2;
+    transform: translateY(-1px);
+}
+
+/* GAME AREA */
+#gameArea {
+    flex: 1;
+    overflow: hidden;
+}
+
+#gameBg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center top;
+    display: block;
 }

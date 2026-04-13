@@ -10,6 +10,7 @@ A game similar to the coolmath games Final Earth and Pre-Civilization Bronze Age
 
 ### How I used AI
 * Creating images
+* Most of the CSS
 
 ## Contact
 * **Portfolio:** AudreyBurrell.github.io
