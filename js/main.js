@@ -27,7 +27,18 @@ let houseCapacity = 4;
 let justStarting = true; //turns to false after doing the tutorial/skipping the tutorial
 
 document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('settingsBtn').disabled = true;
+    document.getElementById('nextDayBtn').disabled = true;
     setTimeout(() => {
+        document.getElementById("screenOverlay").style.display = "block";
         document.getElementById("tutorialPopup").style.display = "block";
     }, 3000); 
-})
+});
+
+document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
+    //update the variables to whatever they are after tutorial
+    document.getElementById('settingsBtn').disabled = false;
+    document.getElementById('nextDayBtn').disabled = false;
+    document.getElementById('screenOverlay').style.dispaly = "none";
+    document.getElementById("tutorialPopup").style.display = "none";
+});
