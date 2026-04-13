@@ -1,8 +1,33 @@
 //Steps (for now)
 /*
-    1. Initialize variables like food, people, farms, etc.
     2 (or more like 1). Decide on whether or not I want to have a tutorial (probably yes, make sure it has a 
     button to get out of it though and keep the variables from that as the new initializers)
         Note: might as well keep the tutorial on main.html
-    3. Create the header displaying the information
 */
+
+let population = 12;
+let homelessPopulation;
+let birthRate;
+let deathRate;
+let happiness;
+let health = 100; //percentage
+let food = 50;
+let dangerLevel = 0; //percentage
+let defenseStrength;
+let raidChance = 0; //percentage, again
+let naturalDisasterRisk = 0;
+let wood;
+let stone;
+let tools;
+let day = 1;
+let weather;
+let houseCapacity = 4;
+//later add variables to store how many people in the jobs and stuff
+
+let justStarting = true; //turns to false after doing the tutorial/skipping the tutorial
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.getElementById("tutorialPopup").style.display = "block";
+    }, 3000); 
+})
