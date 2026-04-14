@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     // actual values
     population: 12,
     "house capacity": 4,
-    "homeless population": undefined,
+    homelessPopulation: 12,
     food: 50,
     wood: 0,
     stone: 0,

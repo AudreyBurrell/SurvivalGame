@@ -36,6 +36,21 @@ body {
     gap: 12px;
 }
 
+/*HEADER INFO*/
+#personStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+
+    font-size: 14px;
+    line-height: 1.2;
+}
+#personStats p {
+    margin: 0;
+    opacity: 0.9;
+}
+
 /* RIGHT BUTTON AREA */
 #headerControls {
     display: flex;

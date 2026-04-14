@@ -2,6 +2,9 @@ import {
     initializeVariables
 } from "./data/updateVariables.js";
 import {
+    updateHeader
+} from "./data/headerData.js";
+import {
     initializeTutorial
 } from "./tutorial/tutorial.js";
 
@@ -9,6 +12,7 @@ let open = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     initializeVariables();
+    updateHeader();
     const buildToggleBtn = document.getElementById('buildToggleBtn');
     const buildOptions = document.getElementById('buildOptions');
     buildToggleBtn.addEventListener("click", () => {
