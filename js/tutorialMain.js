@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeader();
     const buildToggleBtn = document.getElementById('buildToggleBtn');
     const buildOptions = document.getElementById('buildOptions');
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext("2d");
+    const TILE_SIZE = 40;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
     buildToggleBtn.addEventListener("click", () => {
         open = !open;
         if (open) {

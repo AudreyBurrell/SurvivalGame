@@ -1,0 +1,1 @@
+const dropZone = document.getElementById("dropZone");
