@@ -41,5 +41,24 @@ export function determineEmployed() {
 
 export function updateWorkers(job, change) {
     //TO-DO: need to make sure to have functionality from removing workers from jobs when someone dies
+    let key;
+    if (job == "wood" || job == "stone" || job == "farmer") {
+        key = `${job}Workers`;
+    } else {
+        key = "warriors";
+    }
+    let current = loadFromStorage(key) || 0;
+    const totalWorkers = (loadFromStorage("farmWorkers") || 0) +
+        (loadFromStorage("woodWorkers") || 0) +
+        (loadFromStorage("stoneWorkers") || 0) +
+        (loadFromStorage("warriors") || 0);
+    const population = loadFromStorage("population") || 0;
+    let newValue = current + change;
+    if (newValue < 0) newValue = 0;
+    if (change > 0 && totalWorkers >= population) {
+        return current;
+    }
+    saveToStorage(key, newValue);
+    return newValue;
 
 }

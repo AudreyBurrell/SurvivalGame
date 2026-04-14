@@ -21,7 +21,6 @@ let open = false;
 document.addEventListener("DOMContentLoaded", function () {
     initializeVariables();
     updateHeader();
-    const buildToggleBtn = document.getElementById('buildToggleBtn');
     const buildOptions = document.getElementById('buildOptions');
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext("2d");
@@ -32,26 +31,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
-    buildToggleBtn.addEventListener("click", () => {
-        open = !open;
-        if (open) {
-            buildOptions.classList.remove("hidden");
-            buildToggleBtn.style.transform = "rotate(180deg)";
-        } else {
-            buildOptions.classList.add("hidden");
-            buildToggleBtn.style.transform = "rotate(0deg)";
-        }
-    });
     document.getElementById('settingsBtn').disabled = true;
     document.getElementById('nextDayBtn').disabled = true;
-    buildToggleBtn.disabled = true;
+    document.getElementById('buildToggleBtn').disabled = true;
 
     setTimeout(() => {
         document.getElementById("screenOverlay").style.display = "block";
         document.getElementById("tutorialPopup").style.display = "block";
     }, 3000); 
+
 });
 
+//OTHER EVENT LISTENERS
 //tutorial stuff
 document.getElementById('continueTutorialBtn').addEventListener("click", () => {
     //to save space, execute code that is located in a different file
@@ -62,12 +53,13 @@ document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
     //update the variables to whatever they are after tutorial
     document.getElementById('settingsBtn').disabled = false;
     document.getElementById('nextDayBtn').disabled = false;
-    document.getElementById('buildToggleBtn').disabled = false;;
+    document.getElementById('buildToggleBtn').disabled = false;
     document.getElementById('screenOverlay').style.display = "none";
-    document.getElementById("tutorialPopup").style.display = "none";
-    
+    document.getElementById("tutorialPopup").style.display = "none";    
 });
 
+//popups that are for everything
+//settings
 document.getElementById('settingsBtn').addEventListener("click", () => {
     document.getElementById('screenOverlay').style.display = "block";
     document.getElementById('settingsPopup').classList.add('open');
@@ -75,10 +67,31 @@ document.getElementById('settingsBtn').addEventListener("click", () => {
     initializeWorkerAmounts();
     let employed = determineEmployed();
     document.getElementById('populationSettingsDisplay').textContent = `Employed: ${employed}/${population}`;
-    //and then determine who is working, code for updating each, etc.
 });
 
 document.getElementById('leaveSettingsBtn').addEventListener("click", () => {
     document.getElementById('settingsPopup').classList.remove('open');
     document.getElementById('screenOverlay').style.display = "none";
-})
+});
+
+document.querySelectorAll("#buildToggleBtn").forEach((el, i) => {
+    console.log(i, el, "visible?", el.offsetParent !== null);
+});
+//build menu
+document.getElementById('buildToggleBtn').addEventListener("click", () => {
+    console.log("build toggle button clicked");
+    open = !open;
+    if (open) {
+        buildOptions.classList.remove("hidden");
+        buildToggleBtn.style.transform = "rotate(180deg)";
+    } else {
+        buildOptions.classList.add("hidden");
+        buildToggleBtn.style.transform = "rotate(0deg)";
+    }
+});
+
+
+
+
+//NOTE: I CAN NO LONGER OPEN THE ADD ITEM AREA
+//the actual -/+ buttons functionality goes here------------------ LEFT OFF HERE ----------------------------------------------------------
