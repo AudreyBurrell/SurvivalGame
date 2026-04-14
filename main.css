@@ -155,3 +155,56 @@ body {
     background: #f2f2f2;
     transform: translateY(-1px);
 }
+
+/*BUILD MENU*/
+#buildMenu {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* circular toggle button */
+.circleBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #444;
+    color: white;
+}
+
+/* menu container */
+#buildOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* hidden state */
+.hidden {
+    display: none !important;
+}
+
+#buildOptions button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background: #666;
+    color: white;
+    border-radius: 6px;
+}
+
+#buildOptions button:hover {
+    background: #888;
+}

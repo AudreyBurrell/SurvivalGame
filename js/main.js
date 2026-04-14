@@ -4,26 +4,34 @@ import {
 import {
     initializeTutorial
 } from "./tutorial/tutorial.js";
-//Steps (for now)
-/*
-    2 (or more like 1). Decide on whether or not I want to have a tutorial (probably yes, make sure it has a 
-    button to get out of it though and keep the variables from that as the new initializers)
-        Note: might as well keep the tutorial on main.html
-*/
 
-
-let justStarting = true; //turns to false after doing the tutorial/skipping the tutorial
+let open = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     initializeVariables();
+    const buildToggleBtn = document.getElementById('buildToggleBtn');
+    const buildOptions = document.getElementById('buildOptions');
+    buildToggleBtn.addEventListener("click", () => {
+        open = !open;
+        if (open) {
+            buildOptions.classList.remove("hidden");
+            buildToggleBtn.style.transform = "rotate(180deg)";
+        } else {
+            buildOptions.classList.add("hidden");
+            buildToggleBtn.style.transform = "rotate(0deg)";
+        }
+    });
     document.getElementById('settingsBtn').disabled = true;
     document.getElementById('nextDayBtn').disabled = true;
+    buildToggleBtn.disabled = true;
+
     setTimeout(() => {
         document.getElementById("screenOverlay").style.display = "block";
         document.getElementById("tutorialPopup").style.display = "block";
     }, 3000); 
 });
 
+//tutorial stuff
 document.getElementById('continueTutorialBtn').addEventListener("click", () => {
     //to save space, execute code that is located in a different file
     initializeTutorial();
@@ -33,6 +41,9 @@ document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
     //update the variables to whatever they are after tutorial
     document.getElementById('settingsBtn').disabled = false;
     document.getElementById('nextDayBtn').disabled = false;
+    document.getElementById('buildToggleBtn').disabled = false;;
     document.getElementById('screenOverlay').style.display = "none";
     document.getElementById("tutorialPopup").style.display = "none";
 });
+
+
