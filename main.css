@@ -37,19 +37,31 @@ body {
 }
 
 /*HEADER INFO*/
-#personStats {
+.hudGroup {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2px;
+    align-items: center;
+    gap: 8px;
+}
+.statChip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 5px 10px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
 
     font-size: 14px;
-    line-height: 1.2;
+    white-space: nowrap;
+
+    transition: 0.15s ease;
 }
-#personStats p {
-    margin: 0;
-    opacity: 0.9;
+
+.statChip:hover {
+    background: rgba(255, 255, 255, 0.14);
 }
+
 
 /* RIGHT BUTTON AREA */
 #headerControls {

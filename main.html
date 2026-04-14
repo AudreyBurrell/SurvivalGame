@@ -11,9 +11,20 @@
         <div id="headerArea">
             <div id="statsArea">
                 <!--put stats and stuff in here after I determine what should be shown-->
-                <div id="personStats"> <!--the text boxes inside these divs should appear one on top of another-->
-                    <p id="populationDisplay">Popuplation:</p>
-                    <p id="homelessDisplay">Homeless:</p>
+                <div id="survivalStats" class="hudGroup">
+                    <div class="statChip">🌤️ <span id="weatherDisplay"></span></div>
+                    <div class="statChip">👤 <span id="populationDisplay"></span></div>
+                    <div class="statChip">🏚️ <span id="homelessDisplay"></span></div>
+                    <div class="statChip">❤️ <span id="healthDisplay"></span></div>
+                    <div class="statChip">🙂 <span id="happinessDisplay"></span></div>
+                    <div class="statChip">🛡️ <span id="strengthDisplay"></span></div>
+                    <div class="statChip">⚠️ <span id="dangerDisplay"></span></div>
+                </div>
+                <div id="resourceStats" class="hudGroup">
+                    <div class="statChip">🍖 <span id="foodDisplay"></span></div>
+                    <div class="statChip">🪵 <span id="woodDisplay"></span></div>
+                    <div class="statChip">🪨 <span id="stoneDisplay"></span></div>
+                    <div class="statChip">🔧 <span id="toolsDisplay"></span></div>
                 </div>
             </div>
             <div id="headerControls">
@@ -22,7 +33,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" id="gearSVG">
                         <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.63l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.1 7.1 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.57.23-1.11.54-1.62.94l-2.39-.96a.5.5 0 0 0-.61.22L2.71 8.85a.5.5 0 0 0 .12.63l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.63l1.92 3.32a.5.5 0 0 0 .61.22l2.39-.96c.5.4 1.04.72 1.62.94l.36 2.54a.5.5 0 0 0 .5.42h3.84a.5.5 0 0 0 .5-.42l.36-2.54c.57-.23 1.11-.54 1.62-.94l2.39.96a.5.5 0 0 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.63l-2.03-1.58ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
                     </svg>
-                    <span>Settings</span>
                 </button>
             </div>
         </div>

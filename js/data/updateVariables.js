@@ -6,7 +6,7 @@ import { saveToStorage, loadFromStorage } from "../utils/storage.js";
 const INITIAL_STATE = {
     // actual values
     population: 12,
-    "house capacity": 4,
+    houseCapacity: 4,
     homelessPopulation: 12,
     food: 50,
     wood: 0,
@@ -14,14 +14,14 @@ const INITIAL_STATE = {
     tools: 0,
 
     // percentages
-    "birth rate": undefined,
-    "death rate": undefined,
-    happiness: 100,
+    birthRate: undefined,
+    deathRate: undefined,
+    happiness: 50,
     health: 100,
-    "danger level": 0,
-    "defense strength": undefined,
-    "raid chance": 0,
-    "natural disaster risk": 0,
+    dangerLevel: 0,
+    defenseStrength: 100,
+    raidChance: 0,
+    naturalDisasterRisk: 0,
 
     // time/state
     day: 1,
