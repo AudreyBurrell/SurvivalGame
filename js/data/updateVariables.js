@@ -25,7 +25,19 @@ const INITIAL_STATE = {
 
     // time/state
     day: 1,
-    weather: undefined
+    weather: undefined,
+
+    //workers
+    farmWorkers: 0,
+    woodWorkers: 0,
+    stoneWorkers: 0,
+    warriors: 0,
+
+    //board state
+    houses: 0,
+    woodShopAmount: 0,
+    stoneShopAmount: 0,
+    farmAmount: 0
 };
 
 export function initializeVariables() {

@@ -7,6 +7,14 @@ import {
 import {
     initializeTutorial
 } from "./tutorial/tutorial.js";
+import {
+    loadFromStorage,
+    saveToStorage
+} from "./utils/storage.js";
+import {
+    initializeWorkerAmounts,
+    determineEmployed
+} from "./settings/updateWorkers.js";
 
 let open = false;
 
@@ -57,6 +65,20 @@ document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
     document.getElementById('buildToggleBtn').disabled = false;;
     document.getElementById('screenOverlay').style.display = "none";
     document.getElementById("tutorialPopup").style.display = "none";
+    
 });
 
+document.getElementById('settingsBtn').addEventListener("click", () => {
+    document.getElementById('screenOverlay').style.display = "block";
+    document.getElementById('settingsPopup').classList.add('open');
+    let population = loadFromStorage('population');
+    initializeWorkerAmounts();
+    let employed = determineEmployed();
+    document.getElementById('populationSettingsDisplay').textContent = `Employed: ${employed}/${population}`;
+    //and then determine who is working, code for updating each, etc.
+});
 
+document.getElementById('leaveSettingsBtn').addEventListener("click", () => {
+    document.getElementById('settingsPopup').classList.remove('open');
+    document.getElementById('screenOverlay').style.display = "none";
+})

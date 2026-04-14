@@ -62,14 +62,40 @@
             <button id="continueTutorialBtn">View Tutorial</button>
             <button id="leaveTutorialBtn">Skip Tutorial</button>
         </div>
+        <div id="settingsPopup">
+            <!--this is the area where the users can adjust how many people work where-->
+            <p id="settingsTitle">Game Settings</p>
+            <p id="populationSettingsDisplay"></p>
+            <div class="settingsOption">
+                <button id="minusFarmer"> - </button>
+                <p id="farmerWorkersAmount"></p>
+                <button id="plusFarmer"> + </button>
+            </div>
+            <div class="settingsOption">
+                <button id="minusWood"> - </button>
+                <p id="woodWorkersAmount"></p>
+                <button id="plusWood"> + </button>
+            </div>
+            <div class="settingsOption">
+                <button id="minusStone"> - </button>
+                <p id="stoneWorkersAmount"></p>
+                <button id="plusStone"> + </button>
+            </div>
+            <div class="settingsOption">
+                <button id="minusWarrior"> - </button>
+                <p id="warriorWorkersAmount"></p>
+                <button id="plusWarrior"> + </button>
+            </div>
+            <button id="leaveSettingsBtn">Exit</button>
+        </div>
 
     </body>
-    <script type="module" src="js/tutorialMain.js"></script>
+    <script type="module" src="js/main.js"></script>
 
 </html> 
 
 <!--TO DO
-2. Add a canvas with a grid so the user can actually drop stuff down, but only in the grassy areas.
+2. Finish settings
 3. Make the tutorial
 
 -->
