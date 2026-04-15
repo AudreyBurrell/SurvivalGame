@@ -79,15 +79,36 @@ document.getElementById('leaveSettingsBtn').addEventListener("click", () => {
 document.getElementById('minusFarmer').addEventListener("click", () => {
     updateWorkers("farm", -1);
     initializeWorkerAmounts();
-})
+});
 document.getElementById('plusFarmer').addEventListener("click", () => {
     updateWorkers("farm", +1);
     initializeWorkerAmounts();
-})
+});
+document.getElementById('minusWood').addEventListener("click", () => {
+    updateWorkers("wood", -1);
+    initializeWorkerAmounts();
+});
+document.getElementById('plusWood').addEventListener("click", () => {
+    updateWorkers("wood", +1);
+    initializeWorkerAmounts();
+});
+document.getElementById('minusStone').addEventListener("click", () => {
+    updateWorkers("stone", -1);
+    initializeWorkerAmounts();
+});
+document.getElementById('plusStone').addEventListener("click", () => {
+    updateWorkers("stone", +1);
+    initializeWorkerAmounts();
+});
+document.getElementById('minusWarrior').addEventListener("click", () => {
+    updateWorkers("warrior", -1);
+    initializeWorkerAmounts();
+});
+document.getElementById('plusWarrior').addEventListener("click", () => {
+    updateWorkers("warrior", +1);
+    initializeWorkerAmounts();
+});
 
-//<button id="minusFarmer"> - </button>
- //               <p id="farmerWorkersAmount"></p>
-   //             <button id="plusFarmer"> + </button>
 
 
 

@@ -7,9 +7,9 @@ export function initializeWorkerAmounts() {
     let woodWorkerAmount = Number(loadFromStorage('woodWorkers')) || 0;
     let stoneWorkerAmount = Number(loadFromStorage('stoneWorkers')) || 0;
     let warriorWorkerAmount = Number(loadFromStorage('warriors')) || 0;
-    determineEmployed();
+    let totalEmployed = determineEmployed();
     document.getElementById('farmerWorkersAmount').textContent = `Farm Workers: ${farmWorkerAmount}`;
-    if (loadFromStorage('farmAmount') == 0) {
+    if (loadFromStorage('farmAmount') == 0) { //put an or statement in here to check total employed
         // document.getElementById('minusFarmer').disabled = true;
         // document.getElementById('plusFarmer').disabled = true;
     } else {
