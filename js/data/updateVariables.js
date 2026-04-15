@@ -37,7 +37,8 @@ const INITIAL_STATE = {
     houses: 0,
     woodShopAmount: 0,
     stoneShopAmount: 0,
-    farmAmount: 0
+    farmAmount: 0,
+    fortificationAmount: 0
 };
 
 export function initializeVariables() {

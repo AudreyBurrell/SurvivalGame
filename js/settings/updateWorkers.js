@@ -9,31 +9,37 @@ export function initializeWorkerAmounts() {
     let warriorWorkerAmount = Number(loadFromStorage('warriors')) || 0;
     let totalEmployed = determineEmployed();
     document.getElementById('farmerWorkersAmount').textContent = `Farm Workers: ${farmWorkerAmount}`;
-    if (loadFromStorage('farmAmount') == 0) { //put an or statement in here to check total employed
-        // document.getElementById('minusFarmer').disabled = true;
-        // document.getElementById('plusFarmer').disabled = true;
+    if (loadFromStorage('farmAmount') == 0) { 
+        document.getElementById('minusFarmer').disabled = true;
+        document.getElementById('plusFarmer').disabled = true;
     } else {
         document.getElementById('minusFarmer').disabled = false;
         document.getElementById('plusFarmer').disabled = false;
     }
     document.getElementById('woodWorkersAmount').textContent = `Wood Workers: ${woodWorkerAmount}`;
     if (loadFromStorage('woodShopAmount') == 0) {
-        // document.getElementById('minusWood').disabled = true;
-        // document.getElementById('plusWood').disabled = true;
+        document.getElementById('minusWood').disabled = true;
+        document.getElementById('plusWood').disabled = true;
     } else {
         document.getElementById('minusWood').disabled = false;
         document.getElementById('plusWood').disabled = false;
     }
     document.getElementById('stoneWorkersAmount').textContent = `Stone Workers: ${stoneWorkerAmount}`;
     if (loadFromStorage('stoneShopAmount') == 0) {
-        // document.getElementById('minusStone').disabled = true;
-        // document.getElementById('plusStone').disabled = true;
+        document.getElementById('minusStone').disabled = true;
+        document.getElementById('plusStone').disabled = true;
     } else {
         document.getElementById('minusStone').disabled = false;
         document.getElementById('plusStone').disabled = false;
     }
     document.getElementById('warriorWorkersAmount').textContent = `Warriors: ${warriorWorkerAmount}`;
-    //warriors don't have a location to be added first
+    if (loadFromStorage('fortificationAmount') == 0) {
+        document.getElementById('minusWarrior').disabled = true;
+        document.getElementById('plusWarrior').disabled = true;
+    } else {
+        document.getElementById('minusWarrior').disabled = false;
+        document.getElementById('plusWarrior').disabled = false;
+    }
 }
 export function determineEmployed() {
     let sum = Number(loadFromStorage('farmWorkers')) +
