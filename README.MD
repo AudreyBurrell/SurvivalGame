@@ -9,8 +9,9 @@ A game similar to the coolmath games Final Earth and Pre-Civilization Bronze Age
 * Claude.ai and ChatGPT 
 
 ### How I used AI
-* Creating images
+* Creating the background images and the emojis in the header
 * Most of the CSS
+* the drag and drop functionality
 
 ## Contact
 * **Portfolio:** AudreyBurrell.github.io

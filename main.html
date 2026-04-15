@@ -1,4 +1,3 @@
-<!--NOTE: THIS IS THE TUTORIAL PAGE-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +38,6 @@
         <div id="gameArea">
             <img src="assets/Background.png" alt="grassy background image" id="gameBg">
             <canvas id="gameCanvas"></canvas>
-            <div id="dropZone"></div> <!--eventually change this to be an image of just the main green stuff-->
         </div>
         <div id="buildMenu">
             <button id="buildToggleBtn" class="circleBtn">
@@ -49,11 +47,11 @@
             </button>
             <!--hidden menu (eventually replace these with images)-->
             <div id="buildOptions" class="hidden">
-                <button>House</button>
-                <button>Farm</button>
-                <button>Wood Center</button>
-                <button>Stone Center</button>
-                <button>Fortification</button>
+                <button id="placeHouseBtn">House</button>
+                <button id="placeFarmBtn">Farm</button>
+                <button id="placeWoodBtn">Wood Center</button>
+                <button id="placeStoneBtn">Stone Center</button>
+                <button id="placeFortBtn">Fortification</button>
             </div>
         </div>
         <!--all the popups should go down here.-->
