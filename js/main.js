@@ -13,7 +13,8 @@ import {
 } from "./utils/storage.js";
 import {
     initializeWorkerAmounts,
-    determineEmployed
+    determineEmployed,
+    updateWorkers
 } from "./settings/updateWorkers.js";
 
 let open = false;
@@ -73,10 +74,25 @@ document.getElementById('leaveSettingsBtn').addEventListener("click", () => {
     document.getElementById('settingsPopup').classList.remove('open');
     document.getElementById('screenOverlay').style.display = "none";
 });
+//the actual -/+ buttons functionality goes here LEFT OFF HERE ------------------------------------------------------------
+//(need to add more checks in the updateWorkers to make sure users can't add and add and add)
+document.getElementById('minusFarmer').addEventListener("click", () => {
+    updateWorkers("farm", -1);
+    initializeWorkerAmounts();
+})
+document.getElementById('plusFarmer').addEventListener("click", () => {
+    updateWorkers("farm", +1);
+    initializeWorkerAmounts();
+})
 
-document.querySelectorAll("#buildToggleBtn").forEach((el, i) => {
-    console.log(i, el, "visible?", el.offsetParent !== null);
-});
+//<button id="minusFarmer"> - </button>
+ //               <p id="farmerWorkersAmount"></p>
+   //             <button id="plusFarmer"> + </button>
+
+
+
+
+
 //build menu
 document.getElementById('buildToggleBtn').addEventListener("click", () => {
     console.log("build toggle button clicked");
@@ -91,7 +107,3 @@ document.getElementById('buildToggleBtn').addEventListener("click", () => {
 });
 
 
-
-
-//NOTE: I CAN NO LONGER OPEN THE ADD ITEM AREA
-//the actual -/+ buttons functionality goes here------------------ LEFT OFF HERE ----------------------------------------------------------
