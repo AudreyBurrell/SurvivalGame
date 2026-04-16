@@ -1,5 +1,6 @@
 import {
-    initializeVariables
+    initializeVariables,
+    updateBoardAfterClick
 } from "./data/updateVariables.js";
 import {
     updateHeader
@@ -23,6 +24,7 @@ import {
 
 let open = false;
 let placingObject = false;
+let objectToPlace = "";
 let canvas;
 let ctx;
 let mouseX = 0;
@@ -122,9 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const y = e.clientY - rect.top;
         const size = 30;
         if (canPlaceObject(x, y, size, size) && placingObject) {
-            placedObjects.push({ x, y, width: size, height: size });
+            placedObjects.push({ x, y, width: size, height: size, type: objectToPlace });
             console.log("Placed!");
             saveToStorage('placedObjects', placedObjects);
+            updateBoardAfterClick(objectToPlace)
+            objectToPlace = "";
+            placingObject = false;
         } else {
             console.log("Invalid placement");
         }
@@ -133,14 +138,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = canvas.getBoundingClientRect();
         mouseX = e.clientX - rect.left;
         mouseY = e.clientY - rect.top;
-        // if (placingObject) {
-        //     drawPreview();
-        // }
     });
 
     document.getElementById('placeHouseBtn').addEventListener("click", () => {
         placingObject = true;
+        objectToPlace = "house";
     });
+    document.getElementById('placeFarmBtn').addEventListener('click', () => {
+        placingObject = true;
+        objectToPlace = "farm";
+    })
 
     
 
@@ -165,8 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // TODO: redraw placed objects here later
         let placedObjects = loadFromStorage('placedObjects') || [];
         for (const obj of placedObjects) {
-            ctx.fillStyle = "red";
+            if (obj.type == "house") { //later replace with the images
+                ctx.fillStyle = "red";
+            } else if (obj.type == "farm") {
+                ctx.fillStyle = "purple";
+            }
             ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
+            
         }
 
         // draw preview LAST (on top)

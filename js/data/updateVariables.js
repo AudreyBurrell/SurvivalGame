@@ -48,3 +48,16 @@ export function initializeVariables() {
     }
 }
 
+export function updateBoardAfterClick(item) {
+    let data;
+    if (item == "house") {
+        data = loadFromStorage('houses');
+        data += 1;
+        saveToStorage('houses', data);
+    } else if (item == "farm") {
+        data = loadFromStorage('farmAmount');
+        data += 1;
+        saveToStorage("farmAmount", data);
+    }
+}
+
