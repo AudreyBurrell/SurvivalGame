@@ -58,6 +58,18 @@ export function updateBoardAfterClick(item) {
         data = loadFromStorage('farmAmount');
         data += 1;
         saveToStorage("farmAmount", data);
+    } else if (item == "wood") {
+        data = loadFromStorage('woodShopAmount');
+        data += 1;
+        saveToStorage('woodShopAmount', data);
+    } else if (item == "stone") {
+        data = loadFromStorage('stoneShopAmount');
+        data += 1;
+        saveToStorage('stoneShopAmount', data);
+    } else if (item == 'fortification') {
+        data = loadFromStorage('fortificationAmount');
+        data += 1;
+        saveToStorage('fortificationAmount', data);
     }
 }
 
