@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buildOptions = document.getElementById('buildOptions');
     canvas = document.getElementById('gameCanvas');
     ctx = canvas.getContext("2d");
-    const TILE_SIZE = 50;
+    const TILE_SIZE = 60;
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const size = 50;
+        const size = 60;
         if (canPlaceObject(x, y, size, size) && placingObject) {
             placedObjects.push({ x, y, width: size, height: size, type: objectToPlace });
             console.log("Placed!");
@@ -178,6 +178,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     //the images for each building
+    const houseImage = new Image();
+    houseImage.src = "assets/houseImage.png";
+
+    const farmImage = new Image();
+    farmImage.src = "assets/farmImage.png";
+
+    const woodImage = new Image();
+    woodImage.src = "assets/woodImage.png";
+
+    const stoneImage = new Image();
+    stoneImage.src = "assets/stoneImage.png";
+
     const fortificationImage = new Image();
     fortificationImage.src = "assets/fortificationImage.png";
 
@@ -190,22 +202,20 @@ document.addEventListener("DOMContentLoaded", function () {
         for (const obj of placedObjects) {
             let img = null;
             if (obj.type == "house") { //later replace with the images
-                ctx.fillStyle = "red";
+                img = houseImage;
             } else if (obj.type == "farm") {
-                ctx.fillStyle = "purple";
+                img = farmImage;
             } else if (obj.type == "wood") {
-                ctx.fillStyle = "brown";
+                img = woodImage;
             } else if (obj.type == "stone") {
-                ctx.fillStyle = "gray";
+                img = stoneImage;
             } else if (obj.type == "fortification") {
                 // ctx.fillStyle = "yellow";
                 img = fortificationImage;
             }
             if (img) {
                 ctx.drawImage(img, obj.x, obj.y, obj.width, obj.height);
-            } else {
-                ctx.fillRect(obj.x, obj.y, obj.width, obj.height); //just keeping this here for now so the others still work
-            }
+            } 
            
             
         }
@@ -214,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (placingObject) {
             ctx.globalAlpha = 0.5;
             ctx.fillStyle = "blue";
-            ctx.fillRect(mouseX, mouseY, 50, 50);
+            ctx.fillRect(mouseX, mouseY, 60, 60);
             ctx.globalAlpha = 1;
         }
 
@@ -238,7 +248,7 @@ function drawPreview() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 0.5;
     ctx.fillStyle = "blue";
-    ctx.fillRect(mouseX, mouseY, 50, 50);
+    ctx.fillRect(mouseX, mouseY, 60, 60);
     ctx.globalAlpha = 1;
 }
 
