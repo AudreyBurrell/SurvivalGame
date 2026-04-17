@@ -12,7 +12,6 @@ export function updateHeader() {
     let foodAmount = loadFromStorage("food");
     let woodAmount = loadFromStorage("wood");
     let stoneAmount = loadFromStorage("stone");
-    let toolsAmount = loadFromStorage("tools");
     let weather = determineWeather(loadFromStorage('day'));
     document.getElementById("populationDisplay").textContent = `Population: ${populationAmount}`;
     document.getElementById("homelessDisplay").textContent = `Homeless: ${homelessAmount}`;
@@ -24,7 +23,6 @@ export function updateHeader() {
     document.getElementById('foodDisplay').textContent = `Food: ${foodAmount}`;
     document.getElementById('woodDisplay').textContent = `Wood: ${woodAmount}`;
     document.getElementById('stoneDisplay').textContent = `Stone: ${stoneAmount}`;
-    document.getElementById('toolsDisplay').textContent = `Tools: ${toolsAmount}`;
 } 
 
 function determineDanger() {

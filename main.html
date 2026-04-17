@@ -23,7 +23,6 @@
                     <div class="statChip">🍖 <span id="foodDisplay"></span></div>
                     <div class="statChip">🪵 <span id="woodDisplay"></span></div>
                     <div class="statChip">🪨 <span id="stoneDisplay"></span></div>
-                    <div class="statChip">🔧 <span id="toolsDisplay"></span></div>
                 </div>
             </div>
             <div id="headerControls">
@@ -47,11 +46,11 @@
             </button>
             <!--hidden menu (eventually replace these with images)-->
             <div id="buildOptions" class="hidden">
-                <button id="placeHouseBtn">House</button>
-                <button id="placeFarmBtn">Farm</button>
-                <button id="placeWoodBtn">Wood Center</button>
-                <button id="placeStoneBtn">Stone Center</button>
-                <button id="placeFortBtn">Fortification</button>
+                <button id="placeHouseBtn">House (10 wood + 10 stone)</button>
+                <button id="placeFarmBtn">Farm (10 wood + 10 stone + 10 food)</button>
+                <button id="placeWoodBtn">Wood Center (20 wood + 10 stone)</button>
+                <button id="placeStoneBtn">Stone Center (10 wood + 20 stone)</button>
+                <button id="placeFortBtn">Fortification (25 wood + 25 stone)</button>
             </div>
         </div>
         <!--all the popups should go down here.-->
@@ -94,7 +93,7 @@
 </html> 
 
 <!--TO DO
-2. Finish settings
-3. Make the tutorial
+1. Make it so the user can only place things if htey have enough materials/subtract the materials too 
+2. Make the tutorial
 
 -->
