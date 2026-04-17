@@ -67,6 +67,12 @@ export function updateBoardAfterClick(item) {
         saveToStorage('houses', data);
         saveToStorage('wood', woodAmount);
         saveToStorage('stone', stoneAmount);
+        //this also influences homeless amount
+        let homeless = loadFromStorage('homelessPopulation');
+        if (homeless > 0) {
+            homeless = Math.max(0, homeless - 4);
+            saveToStorage('homelessPopulation', homeless);
+        }
     } else if (item == "farm") {
         data = loadFromStorage('farmAmount');
         data += 1;
