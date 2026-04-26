@@ -158,6 +158,16 @@ document.addEventListener("DOMContentLoaded", function () {
         updateWorkers("warrior", +1);
         initializeWorkerAmounts();
     });
+    //the rations/production level changes
+    document.getElementById('rationSelect').addEventListener('change', () => {
+        const value = document.getElementById('rationSelect').value;
+        saveToStorage('rations', value);
+    });
+
+    document.getElementById('productionSelect').addEventListener('change', () => {
+        const value = document.getElementById('productionSelect').value;
+        saveToStorage('productionPace', value);
+    });
 
     
     //drag and drop logic

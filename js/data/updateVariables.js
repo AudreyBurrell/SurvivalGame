@@ -39,7 +39,11 @@ const INITIAL_STATE = {
     stoneShopAmount: 0,
     farmAmount: 0,
     fortificationAmount: 0,
-    placedObjects: [] //stores the x, y, width, and height of each object
+    placedObjects: [], //stores the x, y, width, and height of each object
+
+    //rations/production
+    rations: "normal",
+    productionPace: "normal"
 };
 
 export function initializeVariables() {

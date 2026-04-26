@@ -350,6 +350,20 @@ body {
 
     font-size: 14px;
 }
+.settingsOption select {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    border-radius: 8px;
+
+    padding: 4px 8px;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.settingsOption label {
+    font-weight: bold;
+}
 #leaveSettingsBtn {
     margin-top: 16px;
     width: 100%;
