@@ -6,9 +6,6 @@ import {
     updateHeader
 } from "./data/headerData.js";
 import {
-    initializeTutorial
-} from "./tutorial/tutorial.js";
-import {
     loadFromStorage,
     saveToStorage
 } from "./utils/storage.js";
@@ -29,6 +26,7 @@ let canvas;
 let ctx;
 let mouseX = 0;
 let mouseY = 0;
+let tutorialStep = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     initializeVariables();
@@ -51,9 +49,55 @@ document.addEventListener("DOMContentLoaded", function () {
     //OTHER EVENT LISTENERS
     //tutorial stuff
     document.getElementById('continueTutorialBtn').addEventListener("click", () => {
-        //to save space, execute code that is located in a different file
-        initializeTutorial();
-    });
+        //header, add items, settings
+        document.getElementById('tutorialPopup').style.display = "none";
+        document.getElementById('screenOverlay').style.display = "none";
+        document.getElementById('tutorialInstructionPopup').style.display = "block";
+    }); 
+    document.getElementById('nextTutorialStep').addEventListener("click", () => {
+        tutorialStep++;
+        if (tutorialStep == 1) {
+            //the settings panel
+            document.getElementById('settingsPopup').classList.add('open');
+            let population = loadFromStorage('population');
+            initializeWorkerAmounts();
+            let employed = determineEmployed();
+            document.getElementById('populationSettingsDisplay').textContent = `Employed: ${employed}/${population}`;
+            document.getElementById('leaveSettingsBtn').disabled = true;
+            //changing the text of the tutorial popup
+            document.getElementById('arrowText').innerHTML = "&rarr;"
+            document.getElementById('tutorialLocationText').textContent = "Settings";
+            document.getElementById('tutorialText').textContent = "This is your settings panel. Here you can adjust workers per job (note: you have to have at least one of the buildings on the board to assign someone to this job).";
+        }
+        if (tutorialStep == 2) {
+            document.getElementById('tutorialText').textContent = "You can also adjust rations and production rate. Note that higher rations may increase happiness, but higher production rate might decrease happiness."
+        }
+        if (tutorialStep == 3) {
+            //the place location kind of button
+            document.getElementById('leaveSettingsBtn').disabled = false;
+            document.getElementById('settingsPopup').classList.remove('open');
+            buildOptions.classList.remove("hidden");
+            buildToggleBtn.style.transform = "rotate(180deg)";
+            //changing the text
+            document.getElementById('arrowText').innerHTML = "&swarr;"
+            document.getElementById('tutorialLocationText').textContent = "Add Item";
+            document.getElementById('tutorialText').textContent = "This is where you can add an item to the board. Make sure you have enough supplies before placing it down. Go ahead and try building a house. Note how supplies decrease and homeless population decreases.";
+        }
+        if (tutorialStep == 4) {
+            buildOptions.classList.add("hidden");
+            buildToggleBtn.style.transform = "rotate(0deg)";
+            //changing the text
+            document.getElementById('arrowText').textContent = '';
+            document.getElementById('tutorialLocationText').textContent = "Journey";
+            document.getElementById('tutorialText').textContent = "Throughout the journey, you may experience things like attacks from other villages or natural disasters. Make sure you have enough supplies and strength to survive them. Your goal is to survive 100 days. Good luck!";
+        }
+        if (tutorialStep == 5) {
+            document.getElementById('settingsBtn').disabled = false;
+            document.getElementById('nextDayBtn').disabled = false;
+            document.getElementById('buildToggleBtn').disabled = false;
+            document.getElementById('tutorialInstructionPopup').style.display = "none";
+        }
+    })
 
     document.getElementById('leaveTutorialBtn').addEventListener("click", () => {
         //update the variables to whatever they are after tutorial

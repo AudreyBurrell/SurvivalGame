@@ -202,6 +202,49 @@ body {
     transform: translateY(-1px);
 }
 
+#tutorialInstructionPopup {
+    position: fixed;
+    top: 10%; /* instead of centered */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 300px;
+    padding: 20px;
+
+    display: none; /* hidden initially */
+
+    text-align: center;
+
+    background: rgba(255, 248, 235, 0.88); /* same glass look */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    z-index: 2000;
+} 
+
+#tutorialInstructionPopup button {
+    margin: 6px;
+    padding: 8px 12px;
+
+    background: white;
+    border: 2px solid black;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+#tutorialInstructionPopup button:hover {
+    background: #f2f2f2;
+    transform: translateY(-1px);
+}
+
 /*BUILD MENU*/
 #buildMenu {
     position: fixed;
